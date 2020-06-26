@@ -7,8 +7,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  BuildContext context1;
   @override
   Widget build(BuildContext context) {
+    context1=context;
     return Scaffold(
       body: Container(
         color: Colors.white,
@@ -19,6 +21,7 @@ class _LoginPageState extends State<LoginPage> {
             children: <Widget>[
               FlutterLogo(size: 150),
               SizedBox(height: 50),
+              TextField(),
               _signInButton(),
             ],
           ),
@@ -31,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
     return OutlineButton(
       splashColor: Colors.grey,
       onPressed: () {
-        signInWithGoogle().whenComplete(() {
+        /*signInWithGoogle().whenComplete(() {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
@@ -39,7 +42,8 @@ class _LoginPageState extends State<LoginPage> {
               },
             ),
           );
-        });
+        });*/
+        signInWithGoogle(context1);
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       highlightElevation: 0,

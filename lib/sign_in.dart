@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttergsignin/firstscreen.dart';
+import 'package:fluttergsignin/widgets/loading.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -113,6 +114,8 @@ final controller=TextEditingController();
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Text("Enter Username"),
+              SizedBox(height: 50),
               TextField(
                 controller: controller,
               ),

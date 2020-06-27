@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 List<String> ImageList;
+DocumentSnapshot details;
 Future<List<String>> getCarousaldata() async
 {
    ImageList=[];
@@ -16,11 +17,13 @@ for(int i=0;i<documents.length;i++)
   return ImageList;
 }
 
-Future<List<String>> getCarousaldetails(int id) async{
+Future<DocumentSnapshot> getCarousaldetails(String url) async{
+
   final QuerySnapshot result =
-  await Firestore.instance.collection('carousel').where("Id",isEqualTo: id).getDocuments();
+  await Firestore.instance.collection('carousel').where("ImageUrl",isEqualTo: url).getDocuments();
   final List<DocumentSnapshot> documents = result.documents;
   if(documents.length!=0) {
-
+      details=documents[0];
   }
+  return details;
 }

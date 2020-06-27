@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:fluttergsignin/carousel_datacollect.dart';
+import 'package:fluttergsignin/widgets/CDetails.dart';
 
 class Carouselhome extends StatefulWidget {
   final List<String> ImageList;
@@ -54,6 +56,12 @@ class _CarouselhomeState extends State<Carouselhome> {
                         child: GestureDetector(
                             child: Image.network(i, fit: BoxFit.cover),
                             onTap: () {
+                              getCarousaldetails(i).whenComplete(() {
+                                Navigator.push(context,
+                                    MaterialPageRoute<void>(builder: (BuildContext context) =>
+                                        Cdetails(details: details,
+                                        )));
+                              });
                             })
                       );
                     }

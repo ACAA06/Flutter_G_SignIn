@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttergsignin/carousel_datacollect.dart';
+import 'package:fluttergsignin/login_page.dart';
 import 'package:fluttergsignin/widgets/carousel.dart';
 import 'package:fluttergsignin/widgets/loading.dart';
 
@@ -42,6 +43,18 @@ class _HomeState extends State<Home> {
 
                 },
                 child: Text("Pickup"),
+
+              ),
+              RaisedButton(
+                onPressed: () {
+                  getCarousaldata().whenComplete(() {
+                    Navigator.push(context,
+                        MaterialPageRoute<void>(builder: (BuildContext context) =>
+                            LoginPage()));
+                  } );
+
+                },
+                child: Text("Sign In"),
 
               ),
             ],

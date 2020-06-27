@@ -41,7 +41,9 @@ class _CarouselhomeState extends State<Carouselhome> {
                 autoPlayAnimationDuration: Duration(milliseconds: 800),
                 autoPlayCurve: Curves.fastOutSlowIn,
                 pauseAutoPlayOnTouch: true,
+                enlargeCenterPage: true,
                 aspectRatio: 2.0,
+                enlargeStrategy: CenterPageEnlargeStrategy.scale,
                 onPageChanged: (index,CarouselPageChangedReason) {
                   setState(() {
                     _currentIndex = index;
@@ -72,8 +74,8 @@ class _CarouselhomeState extends State<Carouselhome> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: map<Widget>(widget.ImageList, (index, url) {
             return Container(
-              width: 10.0,
-              height: 10.0,
+              width: 5.0,
+              height: 5.0,
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,

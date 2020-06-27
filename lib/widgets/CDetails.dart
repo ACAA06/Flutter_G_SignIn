@@ -11,16 +11,17 @@ class Cdetails extends StatefulWidget {
 
 class _CdetailsState extends State<Cdetails> {
   String About,url;
+  int id;
   @override
   Widget build(BuildContext context) {
     url=widget.details["ImageUrl"];
     About = widget.details["About"];
-
+id=widget.details['Id'];
     return Scaffold(
         backgroundColor: Colors.grey[200],
         appBar: new AppBar(
         backgroundColor: Colors.red[700],
-        title: new Text("Home",
+        title: new Text("Id "+id.toString(),
         style: new TextStyle(color: Colors.white),
     ),
     ),
